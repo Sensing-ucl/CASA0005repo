@@ -297,7 +297,7 @@ Here i write out each raster layer individually though specifying ```bylayer=TRU
 # either read them back in from the saved file:
 
 manc_files<-dir_info(here::here("prac7_data", "Lsatdata", "mask")) %>%
-  dplyr::filter(str_detect(path, "[B1234567]_mask.tif")) %>%
+  dplyr::filter(str_detect(path, "[B1234567]_mask.TIF")) %>%
   dplyr::filter(str_detect(path, "B11", negate=TRUE))%>%
   dplyr::select(path)%>%
   pull()%>%
@@ -594,9 +594,9 @@ Here we have:
 * $\varrho$ which is the Boltzmann constant of $1.38 × 10^-23 J/K$
 
 ```{r, cache=TRUE}
-Boltzmann <- 1.38*10e-23
-Plank <- 6.626*10e-34
-c <- 2.998*10e8
+Boltzmann <- 1.38*e-23
+Plank <- 6.626*e-34
+c <- 2.998*e8
 
 p <- Plank*(c/Boltzmann)
 ```
